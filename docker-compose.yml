@@ -1,0 +1,120 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - pdf_files:/app/pdf_files
+    image: frontend
+
+  iplocator:
+    build:
+      context: ./iplocator
+      dockerfile: Dockerfile
+    ports:
+      - 4011:4011
+    image: iplocator
+
+  phone_scan:
+    build:
+      context: ./phone_scan
+      dockerfile: Dockerfile
+    ports:
+      - 4012:4012
+    image: phone_scan
+
+  pdfanalysis:
+    build:
+      context: ./pdfanalysis
+      dockerfile: Dockerfile
+    ports:
+      - 4013:4013
+    volumes:
+      - pdf_files:/app/pdf_files
+    image: pdfanalysis
+
+  email_scrape:
+    build:
+      context: ./email_scrapper
+      dockerfile: Dockerfile
+    ports:
+      - 4014:4014
+    image: email_scrapper
+
+  links_scrape:
+    build:
+      context: ./links_scanner
+      dockerfile: Dockerfile
+    ports:
+      - 4015:4015
+    image: links_scrapper
+
+  number_inform:
+    build:
+      context: ./number_info
+      dockerfile: Dockerfile
+    ports:
+      - 4016:4016
+    image: number_inform
+
+  subdomain_scan:
+    build:
+      context: ./subdomain_scanner
+      dockerfile: Dockerfile
+    ports:
+      - 4017:4017
+    image: subdomain_scanner
+
+  clickjacking:
+    build:
+      context: ./click_jacking
+      dockerfile: Dockerfile
+    ports:
+      - 4018:4018
+    image: clickjacking
+
+  sql_injection:
+    build:
+      context: ./sql_injection
+      dockerfile: Dockerfile
+    ports:
+      - 4019:4019
+    image: sql_injection
+
+  nmap_scan:
+    build:
+      context: ./nmap
+      dockerfile: Dockerfile
+    ports:
+      - 4020:4020
+    image: nmap_scan
+
+  xss_scan:
+    build:
+      context: ./xss_scanner
+      dockerfile: Dockerfile
+    ports:
+      - 4021:4021
+    image: xss_scanner
+
+  hostheader:
+    build:
+      context: ./hostheader
+      dockerfile: Dockerfile
+    ports:
+      - 4022:4022
+    image: hostheader
+
+  ipdomain:
+    build:
+      context: ./domain_sameIP
+      dockerfile: Dockerfile
+    ports:
+      - 4023:4023
+    image: ipdomain
+
+volumes:
+  pdf_files:     
