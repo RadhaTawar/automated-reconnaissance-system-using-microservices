@@ -1,5 +1,5 @@
-#CDac-Project
-##Steps to run Project:
+# CDac-Project
+## Steps to run Project:
 1) To get this repository, run the following command inside your git-enabled terminal:
 ```
   $ git clone https://github.com/RadhaTawar/automated-reconnaissance-system-using-microservices.git
